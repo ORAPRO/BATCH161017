@@ -27,6 +27,7 @@ public class HDFSServicePut extends Configured implements Tool {
 		Configuration conf = new Configuration(Boolean.TRUE);
 		conf.set("fs.defaultFS", "hdfs://localhost:8020");
 		
+		
 //		print(conf);
 		
 		// Invoke ToolRunner.run
