@@ -13,7 +13,7 @@ import org.apache.hadoop.util.Tool;
 import org.apache.hadoop.util.ToolRunner;
 
 //java -cp /path/to/jars com.laboros.hdfs.HDFSServicePut [configurations] WordCount.txt /user/trainings
-public class HDFSServicePut extends Configured implements Tool {
+public class HDFSServicePut_jkmohan09 extends Configured implements Tool {
 
 	public static void main(String[] args) {
 
@@ -24,8 +24,8 @@ public class HDFSServicePut extends Configured implements Tool {
 			return;
 		}
 		// Loading Configuration
-		Configuration conf = new Configuration(Boolean.TRUE);
-		conf.set("fs.defaultFS", "hdfs://localhost:8020");
+		Configuration conf = new Configuration(Boolean.TRUE);		
+		conf.set("fs.defaultFS", "hdfs://localhost:9000");
 		
 		
 //		print(conf);
