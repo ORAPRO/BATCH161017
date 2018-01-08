@@ -3,6 +3,8 @@ package com.laboros.mr;
 import org.apache.hadoop.conf.Configuration;
 import org.apache.hadoop.conf.Configured;
 import org.apache.hadoop.fs.Path;
+import org.apache.hadoop.io.IntWritable;
+import org.apache.hadoop.io.Text;
 import org.apache.hadoop.mapreduce.Job;
 import org.apache.hadoop.mapreduce.lib.input.TextInputFormat;
 import org.apache.hadoop.mapreduce.lib.output.TextOutputFormat;
@@ -79,8 +81,13 @@ public class WordCountDriver extends Configured implements Tool {
 		wordCountJob.setReducerClass(WordCoutReducer.class);
 		//step-8: SOME THING
 		
+		wordCountJob.setMapOutputKeyClass(Text.class);
+		wordCountJob.setMapOutputValueClass(IntWritable.class);
+		
 		//step-9: Some Thing -2 
 		
+		wordCountJob.setOutputKeyClass(Text.class);
+		wordCountJob.setOutputValueClass(IntWritable.class);
 		//Step: 10 : Trigger Method
 		wordCountJob.waitForCompletion(Boolean.TRUE);
 		return 0;

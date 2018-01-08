@@ -7,22 +7,23 @@ import org.apache.hadoop.mapreduce.Reducer;
 public class WordCoutReducer extends
 		Reducer<Text, IntWritable, Text, IntWritable> {
 
-	protected void setup(
-			org.apache.hadoop.mapreduce.Reducer<Text, IntWritable, Text, IntWritable>.Context arg0)
-			throws java.io.IOException, InterruptedException {
-	};
-
 	@Override
 	protected void reduce(
 			Text key,
 			java.lang.Iterable<IntWritable> values,
 			Context context)
-			throws java.io.IOException, InterruptedException {
+ 			throws java.io.IOException, InterruptedException 
+ 			{
+		//key -- BEAR
+		//values -- {1,2}
+		
+//		String outputKey=key.toString();
+		int count=0;
+		
+		for (IntWritable intWritable : values) {
+			count += intWritable.get();
+		}
+		
+		context.write(key, new IntWritable(count));
 	};
-
-	protected void cleanup(
-			org.apache.hadoop.mapreduce.Reducer<Text, IntWritable, Text, IntWritable>.Context arg0)
-			throws java.io.IOException, InterruptedException {
-	};
-
 }
