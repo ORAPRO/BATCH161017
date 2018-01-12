@@ -29,7 +29,9 @@ public class RJReducer extends Reducer<Text, Text, Text, Text> {
 			}
 			
 		}
+		if(StringUtils.isNotEmpty(name))
+		{
 		context.write(new Text(name), new Text(sum+"\t"+count));
- 			
+		}	
 	};
 }
