@@ -32,7 +32,7 @@ public class BinaryFilesToHadoopSequenceFile {
 			//logger.info("map method called..");
 			
 			//key -- 0
-			//value -- /user/edureka/ADMR/images/auto_loan.png
+			//value -- /user/trainings/ADMR/images/auto_loan.png
 
 			String uri = value.toString();
 			Configuration conf = new Configuration();

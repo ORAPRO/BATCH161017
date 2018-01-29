@@ -79,7 +79,7 @@ public class MyDC {
     job.setNumReduceTasks(0);
     
     try{
-    DistributedCache.addCacheFile(new URI("/user/edureka/ADMR/abc.dat"), job.getConfiguration());
+    DistributedCache.addCacheFile(new URI("/user/trainings/ADMR/abc.dat"), job.getConfiguration());
     }catch(Exception e){
     	System.out.println(e);
     }
